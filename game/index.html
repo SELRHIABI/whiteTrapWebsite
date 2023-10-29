@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Layout</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .task-list {
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .task-list h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .task-list ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .task-list li {
+      margin-bottom: 10px;
+    }
+
+    .task-list label {
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .score-board {
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .score {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .trophy {
+      width: 100px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="task-list">
+          <h1>Challenges List</h1>
+          <ul>
+            <li>
+              <input type="checkbox" id="task1">
+              <label for="task1">Challenge 1 : 25</label><p>Prank your coworker by sending him an email</p>
+            </li>
+            <li>
+              <input type="checkbox" id="task2">
+              <label for="task2">Challenge 2 : 50 points</label><p>Prank you Friend by sending him a direct link</p>
+            </li>
+            <li>
+              <input type="checkbox" id="task3">
+              <label for="task3">Challenge 3 : 100 points</label><p>Disguise the link using a creative methode</p>
+            </li>
+            <li>
+              <input type="checkbox" id="task4">
+              <label for="task4">Challenge 4 : 150 points</label><p>Sread it using a QR code</p>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="score-board">
+          <h2>Score</h2>
+          <div class="score">0</div>
+          <img src="assets/img/_trophy.png" alt="Trophy" class="trophy">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('input[type="checkbox"]').change(function() {
+        if ($(this).is(':checked')) {
+          // Increment the score by 10 when a task is checked
+          var score = parseInt($('.score').text());
+          score += 10;
+          $('.score').text(score);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
